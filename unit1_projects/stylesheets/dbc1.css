@@ -1,0 +1,33 @@
+body {
+	padding:20px 20%;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color:#f8f7f7;
+}
+.left {
+	float:left;
+}
+a, a:link {
+	color:#666666;
+	text-decoration: none;
+}
+a:hover {
+	color:#333333;
+}
+h1 {
+	font-size:60px;
+}
+h5 {
+	font-size:16px;
+}
+h6 {
+	font-size:14px;
+}
+#me {
+	border-radius:100px;
+	max-width:200px;
+}
+#grenada {
+	max-width:400px;
+	width:50%;
+	float:right;
+}
