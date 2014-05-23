@@ -67,3 +67,7 @@ h1 {
 	font-size:12px;
 	color:#666666;
 }
+.wireframe {
+	max-width:900px;
+	display:block;
+}
