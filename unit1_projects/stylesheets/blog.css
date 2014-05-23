@@ -66,3 +66,40 @@ h1 {
 	font-size:12px;
 	color:#666666;
 }
+
+@media screen and (max-width: 768px) {
+	#sidebar {
+		padding:30px 3%;
+		width:24%;
+	}
+	#sidebar h1 {
+		font-size:44px;
+	} 
+	#sidebar h2 {
+		font-size:20px;
+		line-height:30px;
+	}
+	.highlight {
+		font-size:24px;
+	}
+	#main {
+		padding:30px 5%;
+		margin:0 0 0 30%
+	}
+	#main h1 {
+		font-size:24px;
+	}
+}
+@media screen and (max-width: 600px) {
+	#sidebar {
+		float:none;
+		width:auto;
+		position:relative;
+		padding-top:0;
+		border:none;
+	}
+	#main {
+		margin:0;
+		padding:0 3% 30px;
+	}
+}
