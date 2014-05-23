@@ -312,18 +312,26 @@ footer:after {
 @media screen and (max-width: 760px) {
   header h1 {
     float:none;
+    margin-left:10px;
   }
   header nav {
     float:none;
     margin-left:0;
+  }
+  header nav li a {
+    margin:0 15px 0 0;
+    padding:;
   }
   h2 {
     font-size:1.6em;
   }
 }
 @media screen and (max-width: 480px) {
+  header h1 {
+    margin-left:5px;
+  }
   header nav li a {
-    margin:0 5px;
+    padding:5px;
   }
   #famous article.woman {
     float:none;
@@ -342,9 +350,6 @@ footer:after {
   footer nav {
     font-size:0.8em;
   }
-  nav li a {
-    padding:5px;
-  }
 }
 @media screen and (max-width: 400px) {
   h1 {
@@ -355,6 +360,9 @@ footer:after {
   }
   header nav li {
     line-height:30px;
+  }
+  header nav li a {
+    margin:0 8px 0 0;
   }
 }
 
