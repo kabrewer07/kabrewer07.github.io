@@ -10,6 +10,12 @@ a, a:link, a:visited {
 h1 {
 	color:#23afaf;
 }
+.right {
+	float:right;
+}
+img.right {
+	max-width:45%;
+}
 #sidebar {
 	position:fixed;
 	width:20%;
