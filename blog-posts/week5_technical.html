@@ -1,0 +1,55 @@
+<!doctype html> 
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>Kim's Technical Blog</title>
+<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="stylesheets/blog.css">
+</head>
+<body>
+	<div id="sidebar">
+		<h1>Aloha!</h1>
+		<h2>Welcome to my DBCxNYC<br><span class="highlight">Technical Blog</span></h2>
+		<div class="author">By Kim Brewer</div>
+	</div>
+	<div id="main">
+		<article>
+			<header>
+				<h1>Initialize Method and Instance Variables</h1>
+				<div class="date">June 15th, 2014</div>
+			</header>
+			<div class="content">
+				<h2>Initialize Method</h2>
+				<p>When calling a Ruby class on an object, it is possible to pass in parameters/arguments when creating a new instance of the class.  You do this by calling the new method with the parameters passed through it.  To access these parameters from the class, you would first define a method called "initialize".  Initialize is run when the "new" method is called on the class.  Within this method you can use the parameters to create instance variables.</p>
+				<pre>
+class Restaurant
+	def initialize (name, location)
+		@name = name
+		@location = location
+	end
+end</pre>
+				<h2>Instance Variables</h2>
+				<p>Usually the reason for creating an initialize method is so that we can pass in parameters to it when calling the "new" method.  In order to use these parameters throughout the class in other methods, we need to set the parameters to instance variables.  You can see in the example above where we created the name and location instance variables in the initialize method.  Instance variables are accessible to all methods within that instance.  These variables are different from local variables in that they have an "@" in front of the variable name.  Local variables are only available in the method in which they are created. Instance variables are great for passing and manipulating information throughout the methods in a class.</p>
+				<p>Here is an example of how instance variables can be used in a class.  Notice how we do not need to pass any parameters into the ad method!</p>
+<pre>
+class Restaurant
+	def initialize (name, location)
+		@name = name
+		@location = location
+	end
+	def ad
+		print "Check out #{@name}" at #{@location}!""
+	end
+end</pre>
+
+				
+				<p>To read more about initialize and instance variables, check out <a href="http://www.tutorialspoint.com/ruby/ruby_classes.htm" target="_blank">http://www.tutorialspoint.com/ruby/ruby_classes.htm</a> and to learn about these and other kinds of variables check out <a href="http://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/45-more-classes/lessons/113-class-variables" target="_blank">http://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/45-more-classes/lessons/113-class-variables</a> and <a href="http://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/45-more-classes/lessons/110-instance-variables" target="_blank">http://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/45-more-classes/lessons/110-instance-variables</a></p>
+			</div>
+		</article>
+	</div>
+</body>
+</html>
+
