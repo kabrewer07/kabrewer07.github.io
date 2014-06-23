@@ -1,0 +1,82 @@
+<!doctype html> 
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>Kim's Technical Blog</title>
+<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="stylesheets/blog.css">
+</head>
+<body>
+	<div id="sidebar">
+		<h1>Aloha!</h1>
+		<h2>Welcome to my DBCxNYC<br><span class="highlight">Technical Blog</span></h2>
+		<div class="author">By Kim Brewer</div>
+	</div>
+	<div id="main">
+		<article>
+			<header>
+				<h1>Blocks and Procs and Lambdas Oh My!</h1>
+				<div class="date">June 22nd, 2014</div>
+			</header>
+			<div class="content">
+				<h2>Blocks</h2>
+				<p>In Ruby a block is some code that can be run which can be combined with methods.  The two ways it is run is by using do...end for multiple line blocks or curly brackets for single line blcoks.  Below are some examples of how to use blocks.</p>
+				<pre>
+numbers = [0, 1, 2, 3, 4]
+numbers.each do |x|
+  p x * 2
+end
+# => Prints 0, 2, 4, 6, 8 on separate lines
+numbers.each { |x| p x }
+# => Prints 0, 1, 2, 3, 4 on separate lines </pre>
+<p>In this example the block of code is combined with the .each method and is being run on the numbers array.  In the first one we are multiplying each value in the array by two and outputting it.  In the second we are just outputting the original value.</p>
+				<h2>Procs</h2>
+				<p>Blocks are not objects and can't be saved as variables so we have to repeat the code if we want to do the same thing again.  Procs are objects and allow us to write the code out once and use it repeatedly by saving it to a variable. In code using a proc we use an "&" to change the proc into a block since the method is expecting a block. A proc will return the call immediately and does not continue with the method.</p>
+<pre>
+numbers = [0, 1, 2, 3, 4]
+new_array = Proc.new { |x| x * 2 }
+numbers.map!(&new_array)
+# => [0, 2, 4, 6, 8]
+
+# Another example
+
+def greeting_call
+	greeting = Proc.new { return "Hello!" }
+	greeting.call
+	p "Hello again!"
+end
+p greeting_call # => "Hello!"
+</pre>
+				<h2>Lambdas</h2>
+				<p>Lambdas are very similar to procs in that they are also objects and also executes some code.  They are different in that lambdas check the number of parameters passed in.  Procs do not and give any missing arguments a value of nil. Another difference is that lambdas will give control back to the method once the block of code is run.</p>
+<pre>
+greeting = lambda { |x| x * 2 }
+p greeting.call("hello") # => "hellohello"
+
+# Another example
+
+def greeting_call
+	greeting = lambda { return "Hello!" }
+	greeting.call
+	p "Hello again!"
+end
+p greeting_call 
+# => "Hello again! nil" on separate lines
+</pre>
+
+				<h2>Helpful Links</h2>
+				<ul>
+					<li><a href="http://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1" target="_blank">http://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1</a></li>
+					<li><a href="http://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/18-blocks/lessons/64-blocks-procs-lambdas" target="_blank">http://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/18-blocks/lessons/64-blocks-procs-lambdas</a></li>
+					<li><a href="http://rubylearning.com/satishtalim/ruby_blocks.html" target="_blank">http://rubylearning.com/satishtalim/ruby_blocks.html</a></li>
+					<li><a href="http://rubymonk.com/learning/books/1-ruby-primer/chapters/34-lambdas-and-blocks-in-ruby/lessons/77-lambdas-in-ruby" target="_blank">http://rubymonk.com/learning/books/1-ruby-primer/chapters/34-lambdas-and-blocks-in-ruby/lessons/77-lambdas-in-ruby</a></li>
+				</ul>
+			</div>
+		</article>
+	</div>
+</body>
+</html>
+
