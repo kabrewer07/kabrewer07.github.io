@@ -84,6 +84,34 @@ h1 {
 .block img {
 	width:100%;
 }
+.reference .content {
+	width:40%;
+}
+.reference .content.left {
+	margin-right:5%;
+	float:left;
+}
+.reference .content.right {
+	float:right;
+}
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+.reference .content p {
+	font-size:16px;
+}
+.reference .content pre {
+	color:blue;
+}
+
 @media screen and (max-width: 900px) {
 	.block.text {
 		padding:15px 3%;
@@ -114,6 +142,11 @@ h1 {
 	}
 	#main h2 {
 		font-size:18px;
+	}
+	.reference .content, .reference .content.left {
+		width:100%;
+		margin:0;
+		float:none;
 	}
 }
 @media screen and (max-width: 600px) {

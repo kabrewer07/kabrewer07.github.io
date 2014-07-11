@@ -1,0 +1,99 @@
+<!doctype html> 
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>Kim's DBCxNYC Website</title>
+<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="main.css">
+</head>
+<body class="reference">
+	<div id="sidebar">
+		<h1>Aloha!</h1>
+		<h2>Welcome to my DBCxNYC<br><span class="highlight">Website</span></h2>
+		<div class="author">By Kim Brewer</div>
+		<p>
+			<a href="https://github.com/kabrewer07">https://github.com/kabrewer07</a><br/>
+		</p>
+	</div>
+	<div id="main">
+		<article class="clearfix">
+			<header>
+				<h1>Looping in Ruby and Javascript</h1>
+			</header>
+			<div class="content left">
+				<h2>Ruby</h2>
+				<p>To loop through some code a certain number of times</p>
+				<pre>
+3.times do
+  puts "Aloha!"
+end
+# => Prints "Aloha" 3 times</pre>
+<p>To loop through and array and execute some code on the values</p>
+				<pre>
+numbers = [0, 1, 2, 3, 4]
+numbers.each do |x|
+  p x * 2
+end
+# => Prints 0, 2, 4, 6, 8 
+
+numbers.each { |x| p x }
+# => Prints 0, 1, 2, 3, 4  
+
+# Another way to loop through an array
+numbers = [0, 1, 2, 3, 4]
+numbers.length.times do |i|
+  puts numbers[i]
+end
+# => Prints 0, 1, 2, 3, 4  </pre>
+<p>To loop from one number up to another number.  Can also use "downto".</p>
+<pre>1.upto(5) do |i|
+  puts i
+end
+# => Prints 1, 2, 3, 4, 5 </pre>
+<p>Using "while" and "until" to loop through an array</p>
+<pre>numbers = [0, 1, 2, 3, 4]
+i = 0
+while i < numbers.length
+  puts numbers[i]
+  i += 1 
+end
+
+numbers = [0, 1, 2, 3, 4]
+i = 0
+until i >= numbers.length
+  puts numbers[i]
+  i += 1 
+end
+# => Both print 0, 1, 2, 3, 4 </pre>
+			</div>
+			<div class="content right">
+				<h2>JavaScript</h2>
+				<p>To loop through and array and execute some code on the values</p>
+				<pre>
+numbers = [0, 1, 2, 3, 4]
+for (var i = 0; i <= numbers.length; i++ ) { 
+  console.log(numbers[i])
+} 
+// => Prints 0, 1, 2, 3, 4  </pre>
+<p>Using "while" to loop</p>
+<pre>var i=0;
+while (i<=10) {
+  console.log(i)
+  i++;
+}
+// Prints the values from 0 to 10</pre>
+<p>To loop through properties of an object using "for...in"</p>
+<pre>var letters = {a: "A", b: "B", c: "C"};
+var letter = '';
+for (letter in letters) {
+	console.log(letter);
+}
+// Prints ['a','b','c'];</pre>
+			</div>
+		</article>
+	</div>
+</body>
+</html>
